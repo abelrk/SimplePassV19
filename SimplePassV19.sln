@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePassV19.Android", "SimplePassV19.Android\SimplePassV19.Android.csproj", "{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePassV19", "SimplePassV19\SimplePassV19.csproj", "{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E8A335-79B6-4F12-AB85-52AD7FC3DF53}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3B8BC4-28F1-4DEF-BFF4-AB0B34E6FAD6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B28923F-5238-413A-B792-DC0547280A45}
+	EndGlobalSection
+EndGlobal
