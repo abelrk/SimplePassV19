@@ -4,11 +4,12 @@
              x:Class="SimplePassV19.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="Blue"  Padding="24" CornerRadius="0">
+            <Label Text="SimplePass" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Button Clicked="Button_Clicked" Text="Authenticate"/>
+        <Label Text="The simple password app :)" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
+        <Button Clicked="Button_ScanFingerPrint" Text="Authenticate"/>
     </StackLayout>
 
 </ContentPage>
+

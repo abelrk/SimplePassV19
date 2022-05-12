@@ -18,27 +18,27 @@ namespace SimplePassV19
         }
 
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Button_ScanFingerPrint(object sender, EventArgs e)
         {
             bool supported = await Plugin.Fingerprint.CrossFingerprint.Current.IsAvailableAsync(true);
             if (supported)
             {
                 AuthenticationRequestConfiguration conf =
-                    new AuthenticationRequestConfiguration("Access our account", "Access your account");
+                    new AuthenticationRequestConfiguration("Fingerprint Authentication", "Ready to scan your fingerprint.");
                 var result = await CrossFingerprint.Current.AuthenticateAsync(conf);
                 if (result.Authenticated)
                 {
-                    await DisplayAlert("Success!", "Success", "ok");
+                    await DisplayAlert("Success!", "Fingerprint successfully authenticated.", "OK");
 
                 }
                 else
                 {
-                    await DisplayAlert("Sorry", "Sorry", "Ok");
+                    await DisplayAlert("Sorry...", "There was an error. Please try again.", "OK");
                 }
             }
             else
             {
-                await DisplayAlert("Sorry", "Sorry", "Ok");
+                await DisplayAlert("Error...", "Your device either doesn't support or is not properly configured.", "OK");
             }
         }
 
