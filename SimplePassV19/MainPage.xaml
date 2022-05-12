@@ -4,11 +4,11 @@
              x:Class="SimplePassV19.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="Blue"  Padding="24" CornerRadius="0">
-            <Label Text="SimplePass" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to SimplePass" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="The simple password app :)" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
-        <Button Clicked="Button_ScanFingerPrint" Text="Authenticate"/>
+        <Label Text="Use Fingerprint to Authenticate" FontSize="Title" Padding="30,10,30,10"/>
+        <Button x:Name="authButton" Clicked="AuthButton_Clicked" Text="Authenticate"/>
     </StackLayout>
 
 </ContentPage>
