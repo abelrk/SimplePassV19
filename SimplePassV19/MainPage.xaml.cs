@@ -17,8 +17,7 @@ namespace SimplePassV19
             InitializeComponent();
         }
 
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void AuthButton_Clicked(object sender, EventArgs e)
         {
             bool supported = await Plugin.Fingerprint.CrossFingerprint.Current.IsAvailableAsync(true);
             if (supported)
@@ -28,17 +27,17 @@ namespace SimplePassV19
                 var result = await CrossFingerprint.Current.AuthenticateAsync(conf);
                 if (result.Authenticated)
                 {
-                    await DisplayAlert("Success!", "Success", "ok");
-
+                    //await DisplayAlert("Authenticated!", "Valid fingerprint", "Okay");
+                    await Navigation.PushAsync(new HomePage()); // Navigate to HomePage
                 }
                 else
                 {
-                    await DisplayAlert("Sorry", "Sorry", "Ok");
+                    await DisplayAlert("Could Not Authenticate", "Biometric read cancelled.", "Okay");
                 }
             }
             else
             {
-                await DisplayAlert("Sorry", "Sorry", "Ok");
+                await DisplayAlert("not supported", "not supported", "Okay");
             }
         }
 
