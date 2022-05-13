@@ -23,7 +23,7 @@ namespace SimplePassV19
             if (supported)
             {
                 AuthenticationRequestConfiguration conf =
-                    new AuthenticationRequestConfiguration("Access our account", "Access your account");
+                    new AuthenticationRequestConfiguration("Fingerprint Authentication", "Ready to scan your fingerprint.");
                 var result = await CrossFingerprint.Current.AuthenticateAsync(conf);
                 if (result.Authenticated)
                 {
