@@ -33,7 +33,6 @@ namespace SimplePassV19
 
             Writer.WritePass(account, username, password);
             //int numButtons = Writer.ReadPass();
-     await DisplayAlert("TEST1", "In AddAccount.", "OK");// --------------------------TEST---------------------------------
 
             //update buttons
             foreach (var profile in Writer.Profiles)
@@ -41,7 +40,7 @@ namespace SimplePassV19
                 Debug.WriteLine(profile.Account);
                 //button update per profile
             }
-    await DisplayAlert("TEST2", "In AddAccount.", "OK"); // --------------------------TEST---------------------------------
+
             await Navigation.PushAsync(new HomePage()); // Navigate to HomePage
         }
     }
