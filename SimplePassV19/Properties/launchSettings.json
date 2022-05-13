@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SimplePassV19": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

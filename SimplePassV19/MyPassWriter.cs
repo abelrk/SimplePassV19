@@ -36,6 +36,7 @@ namespace SimplePassV19
             string line;
             if (File.Exists(Filename))
             {
+
                 using (StreamReader sr = new StreamReader(Filename))
                 {
                     while((line = sr.ReadLine()) != null)

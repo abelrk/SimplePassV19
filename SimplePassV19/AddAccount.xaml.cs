@@ -18,7 +18,7 @@ namespace SimplePassV19
         public AddAccount()
         {
             InitializeComponent();
-            Writer = new MyPassWriter("accounts.csv");
+            Writer = new MyPassWriter("/storage/emulated/0/Download/accounts.csv");
         }
 
         // add another acccount item
