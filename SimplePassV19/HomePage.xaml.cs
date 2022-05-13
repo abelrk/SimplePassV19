@@ -17,7 +17,7 @@ namespace SimplePassV19
         public MyPassWriter Writer { get; set; }
         public HomePage()
         {
-            InitializeComponent();
+            /*InitializeComponent();
 
             Writer = new MyPassWriter("accounts.csv");
             Writer.ReadPass();
@@ -26,9 +26,24 @@ namespace SimplePassV19
             foreach (var profile in Writer.Profiles)
             {
                 Items.Add(profile.Account);
+            }*/
+            
+            // Items
+            {
+                InitializeComponent();
+
+                Items = new ObservableCollection<string>
+            {
+                "Account 1",
+                "Account 2",
+                "Account 3",
+                "Account 4",
+                "Account 5"
+            };
+
+                MyListView.ItemsSource = Items;
             }
 
-            MyListView.ItemsSource = Items;
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -41,7 +56,7 @@ namespace SimplePassV19
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await DisplayAlert("Account Type", "username/email\npassword", "Done");
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
