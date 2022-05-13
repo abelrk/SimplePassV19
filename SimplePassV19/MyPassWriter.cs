@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using CsvHelper;
+//using WritingCSV;
 
 namespace SimplePassV19
 {
@@ -10,23 +12,35 @@ namespace SimplePassV19
         public List<Profile> Profiles { get; set; }
         public string Filename { get; set; }
 
+        public string Filepath { get; set; }
+
         public MyPassWriter(string filename)
         {
             Profiles = new List<Profile>();
             Filename = filename;
+            //Filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Filepath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), filename);
         }
 
-        public Profile WritePass(string account, string username, string password) // needs debug--------------------------------------
+        
+
+        public Profile WritePass(string account, string username, string password) 
         {
             Profile prof = new Profile(account, username, password);
 
-
-            using (StreamWriter sr = new StreamWriter(Filename, append: true))
+            try
             {
-     Console.WriteLine("In WritePass using. TEST1.1");//----------------------------------TEST-----------------------------------------
-                sr.WriteLine(prof.ToString());
+                using (StreamWriter sw = File.CreateText(Filepath))
+                //using (StreamWriter sw = new StreamWriter(@Filename, append: true))
+                {
+                    sw.WriteLine(prof.ToString());
+                }
             }
-   Console.WriteLine("In WritePass. TEST2");//----------------------------------TEST-----------------------------------------
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error with 'using' statement\n", ex);
+            }
+            
             return prof;
         }
 

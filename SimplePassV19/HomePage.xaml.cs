@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CsvHelper;
 
 namespace SimplePassV19
 {
@@ -18,7 +19,7 @@ namespace SimplePassV19
         //public MyPassWriter Writer { get; set; }
         public HomePage()
         {
-            InitializeComponent();
+            /*InitializeComponent();
 
             /*
             Writer = new MyPassWriter("/storage/emulated/0/Download/data.csv");
@@ -28,45 +29,23 @@ namespace SimplePassV19
             foreach (var profile in Writer.Profiles)
             {
                 Items.Add(profile.Account);
-            }
-
-            MyListView.ItemsSource = Items;
-            */
-
-            // Open the stream and read it back.
-            //using (FileStream fs = File.OpenRead("/storage/emulated/0/Download/data.csv"))
-            //{
-            //    byte[] b = new byte[1024];
-            //    UTF8Encoding temp = new UTF8Encoding(true);
-
-            //    while (fs.Read(b, 0, b.Length) > 0)
-            //    {
-            //        Console.WriteLine(temp.GetString(b));
-            //    }
-            //}
+            }*/
             
+            // Items
+            {
+                InitializeComponent();
 
-            // 
-           // StreamReader sr;
-           // string flavor = null;
-           // string path = "/storage/emulated/0/Download/accounts.csv";
-           // File.SetAttributes(path, FileAttributes.Normal);
+                Items = new ObservableCollection<string>
+            {
+                "Account 1",
+                "Account 2",
+                "Account 3",
+                "Account 4",
+                "Account 5"
+            };
 
-           //sr = File.OpenText(path);
-           // while (sr.Peek() != -1)
-           // {
-           //     flavor = sr.ReadLine();
-
-           //     Console.WriteLine(flavor);
-           // }
-           // sr.Close();
-
-            //StreamWriter sw;
-            //int i;
-            //sw = File.CreateText("accounts.csv");
-            //if()
-
-
+                MyListView.ItemsSource = Items;
+            }
 
         }
 
@@ -80,7 +59,7 @@ namespace SimplePassV19
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await DisplayAlert("Account Type", "username/email\npassword", "Done");
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
