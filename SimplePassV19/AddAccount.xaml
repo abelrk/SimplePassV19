@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePassV19.AddAccount">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"
+                     Margin="20">
+            <Entry  x:Name="accountType"
+                    Placeholder="What is the new account?"/>
+            <Entry  x:Name="userEntry"
+                    Placeholder="Enter new username/email"/>
+            <Entry  x:Name="passwordEntry"
+                    Placeholder="Enter new password"/>
+            <Button x:Name="addButton"
+                    Margin="0,50,0,0"
+                    Clicked="AddAccount_Clicked"
+                    Text="Save Account"
+                    BackgroundColor="DarkOrange"
+                    TextColor="White"/> <!-- this button adds new account item in HomePage -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

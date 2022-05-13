@@ -13,23 +13,28 @@ namespace SimplePassV19
     public partial class HomePage : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
-
+        public MyPassWriter Writer { get; set; }
         public HomePage()
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
+            Writer = new MyPassWriter("accounts.csv");
+            Writer.ReadPass();
+            Items = new ObservableCollection<string>();
+
+            foreach (var profile in Writer.Profiles)
             {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
+                Items.Add(profile.Account);
+            }
 
             MyListView.ItemsSource = Items;
         }
 
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddAccount());
+        }
+                
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
